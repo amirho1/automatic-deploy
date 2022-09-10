@@ -16,6 +16,9 @@ spec:
       labels:
         app: jenkins-stateful-set
     spec:
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 0
       containers:
         - name: jenkins-stateful-set
           image: docker.io/jenkins/jenkins:2.346.3-jdk11
