@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: jenkins-stateful-set
+  namespace: calendar
+  labels:
+    app: jenkins-stateful-set
+spec:
+  selector:
+    matchLabels:
+      app: jenkins-stateful-set
+  serviceName: jenkins-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jenkins-stateful-set
+    spec:
+      containers:
+        - name: jenkins-stateful-set
+          image: docker.io/jenkins/jenkins:2.346.3-jdk11
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: jenkins-claim
+              mountPath: /var/jenkins_home
+      volumes:
+        - name: jenkins-claim
+          persistentVolumeClaim:
+            claimName: jenkins-claim
