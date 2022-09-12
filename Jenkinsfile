@@ -1,13 +1,29 @@
 pipeline {
   agent any 
+  environment {
+    NEW_VERSION = "1.3.0"
+    SERVER_CREDENTIAL = credentials("server-credential")
+  }
+  
   stages {
     stage("test") {
       steps {
-        echo "Hello Test"
+        echo "Hello Test ${NEW_VERSION}"
+      }
+    }
+
+    stages("new_stage") {
+      steps {
+        echo "Added new stage"
       }
     }
 
     stage("build") {
+      when {
+        expression {
+          BRANCH_NAME == "main" 
+        }
+      }
       steps {
         echo "hello Build"
       }
