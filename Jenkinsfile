@@ -12,7 +12,7 @@ pipeline {
       }
     }
 
-    stages("new_stage") {
+    stage("new_stage") {
       steps {
         echo "Added new stage ${JAVA_HOME}"
       }
