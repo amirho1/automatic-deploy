@@ -14,7 +14,7 @@ pipeline {
 
     stages("new_stage") {
       steps {
-        echo "Added new stage"
+        echo "Added new stage ${JAVA_HOME}"
       }
     }
 
