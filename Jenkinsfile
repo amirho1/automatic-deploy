@@ -12,12 +12,6 @@ pipeline {
       }
     }
 
-    stage("new_stage") {
-      steps {
-        echo "Added new stage ${JAVA_HOME}"
-      }
-    }
-
     stage("build") {
       when {
         expression {
