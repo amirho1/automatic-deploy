@@ -3,8 +3,8 @@ pipeline {
   environment {
     NEW_VERSION = "1.3.0"
   }
-  
-  tools {nodejs "nodejs"}
+
+  tools {nodejs 'nodejs'}
   
   stages {
     stage("test") {
