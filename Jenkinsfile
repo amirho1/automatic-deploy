@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage("test") {
       steps {
-        npm run test
+        npm i &&  npm run test
         echo "testing with yarn"
       }
     }
