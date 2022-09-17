@@ -7,7 +7,8 @@ pipeline {
   stages {
     stage("test") {
       steps {
-        echo '$(npm --version)'
+        sh 'npm run i'
+        sh 'npm run test'
         echo "testing with yarn"
       }
     }
