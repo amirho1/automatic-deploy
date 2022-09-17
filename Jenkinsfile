@@ -8,6 +8,7 @@ pipeline {
     stage("test") {
       steps {
         echo "Hello Test ${NEW_VERSION}"
+        echo "edit jenkins file"
       }
     }
 
