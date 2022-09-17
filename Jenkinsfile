@@ -7,8 +7,7 @@ pipeline {
   stages {
     stage("test") {
       steps {
-        sh yarn test
-        echo "testing with yarn"
+        echo "Hello Test ${NEW_VERSION}"
       }
     }
 
