@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage("test") {
       steps {
-        sh yarn test
+        yarn test
         echo "testing with yarn"
       }
     }
