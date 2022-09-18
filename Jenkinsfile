@@ -9,8 +9,8 @@ pipeline {
   stages {
     stage("test") {
       steps {
-        sh 'npm run i'
-        sh 'npm run test'
+        sh 'yarn install'
+        sh 'yarn test'
         echo "testing with yarn"
       }
     }
